@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Map;
 
 public class Main17 {
@@ -10,10 +11,21 @@ public class Main17 {
      */
 
     public static void main(String[] args) {
-
+        HashMap<String, String> a = new HashMap<>();
+        a.put("Smith","949-0504");
+        a.put("Marty","206-9024");
+        HashMap<String, String> b = new HashMap<>();
+        b.put("Marty","206-9024");
+        b.put("Hawking","123-4567");
+        b.put("Smith","949-0504");
+        b.put("Newton","123-4567");
+        HashMap<String, String> c = new HashMap<>();
+        System.out.println(subMap(a, b));
+        System.out.println(subMap(b, a));
+        System.out.println(subMap(c, b));
     }
 
     public static boolean subMap(Map<String, String> m, Map<String, String> n) {
-
+        return n.entrySet().containsAll(m.entrySet());
     }
 }
